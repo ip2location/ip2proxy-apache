@@ -2,7 +2,7 @@
 
 The module detects visitor IP addresses which are used as VPN anonymizer, open proxies, web proxies and Tor exits.
 
-A IP2Proxy database is required for the lookup. It can be downloaded from http://lite.ip2location.com (Free) or http://www.ip2location.com (Commercial).
+A IP2Proxy database is required for the lookup. It can be downloaded from https://lite.ip2location.com (Free) or https://www.ip2location.com (Commercial).
 
 
 
