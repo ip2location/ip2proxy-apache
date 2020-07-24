@@ -102,6 +102,12 @@ static int ip2proxy_post_read_request(request_rec *r) {
 			apr_table_set(r->subprocess_env, "IP2PROXY_ISP", record->isp); 
 			apr_table_set(r->subprocess_env, "IP2PROXY_IS_PROXY", record->is_proxy);
 			apr_table_set(r->subprocess_env, "IP2PROXY_PROXY_TYPE", record->proxy_type);
+			apr_table_set(r->subprocess_env, "IP2PROXY_DOMAIN", record->domain);
+			apr_table_set(r->subprocess_env, "IP2PROXY_USAGE_TYPE", record->usage_type);
+			apr_table_set(r->subprocess_env, "IP2PROXY_ASN", record->asn);
+			apr_table_set(r->subprocess_env, "IP2PROXY_AS", record->as_);
+			apr_table_set(r->subprocess_env, "IP2PROXY_LAST_SEEN", record->last_seen);
+			apr_table_set(r->subprocess_env, "IP2PROXY_THREAT", record->threat);
 		}
 		if(config->setMode & NOTES_SET_MODE) {
 			apr_table_set(r->notes, "IP2PROXY_COUNTRY_SHORT", record->country_short); 
@@ -111,6 +117,12 @@ static int ip2proxy_post_read_request(request_rec *r) {
 			apr_table_set(r->notes, "IP2PROXY_ISP", record->isp); 
 			apr_table_set(r->notes, "IP2PROXY_IS_PROXY", record->is_proxy); 
 			apr_table_set(r->notes, "IP2PROXY_PROXY_TYPE", record->proxy_type); 
+			apr_table_set(r->notes, "IP2PROXY_DOMAIN", record->domain);
+			apr_table_set(r->notes, "IP2PROXY_USAGE_TYPE", record->usage_type);
+			apr_table_set(r->notes, "IP2PROXY_ASN", record->asn);
+			apr_table_set(r->notes, "IP2PROXY_AS", record->as_);
+			apr_table_set(r->notes, "IP2PROXY_LAST_SEEN", record->last_seen);
+			apr_table_set(r->notes, "IP2PROXY_THREAT", record->threat);
 		}
 	
 		IP2Proxy_free_record(record);		
