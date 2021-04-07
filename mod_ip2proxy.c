@@ -1,4 +1,4 @@
-/* Copyright (C) 2005-2017 IP2Proxy.com
+/* Copyright (C) 2005-2021 IP2Proxy.com
  * All Rights Reserved
  *
  * This library is free software: you can redistribute it and/or
@@ -151,10 +151,12 @@ static const char* set_ip2proxy_dbfile(cmd_parms* cmd, void* dummy, const char* 
 	config->dbFile = apr_pstrdup(cmd->pool, dbFile);
 
 	if(config->enabled) {
-		config->ip2proxyObj = IP2Proxy_open(config->dbFile);	
+		config->ip2proxyObj = IP2Proxy_open(config->dbFile);
 		
 		if(!config->ip2proxyObj)
 			return "Error opening dbFile!";
+
+		IP2Proxy_set_lookup_mode(config->ip2proxyObj, IP2PROXY_CACHE_MEMORY);
 	}
 
 	return NULL; 
