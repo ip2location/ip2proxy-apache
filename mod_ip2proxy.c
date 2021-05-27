@@ -108,6 +108,7 @@ static int ip2proxy_post_read_request(request_rec *r) {
 			apr_table_set(r->subprocess_env, "IP2PROXY_AS", record->as_);
 			apr_table_set(r->subprocess_env, "IP2PROXY_LAST_SEEN", record->last_seen);
 			apr_table_set(r->subprocess_env, "IP2PROXY_THREAT", record->threat);
+			apr_table_set(r->subprocess_env, "IP2PROXY_PROVIDER", record->provider);
 		}
 		if(config->setMode & NOTES_SET_MODE) {
 			apr_table_set(r->notes, "IP2PROXY_COUNTRY_SHORT", record->country_short); 
@@ -123,6 +124,7 @@ static int ip2proxy_post_read_request(request_rec *r) {
 			apr_table_set(r->notes, "IP2PROXY_AS", record->as_);
 			apr_table_set(r->notes, "IP2PROXY_LAST_SEEN", record->last_seen);
 			apr_table_set(r->notes, "IP2PROXY_THREAT", record->threat);
+			apr_table_set(r->notes, "IP2PROXY_PROVIDER", record->provider);
 		}
 	
 		IP2Proxy_free_record(record);		
