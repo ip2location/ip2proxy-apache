@@ -1,6 +1,6 @@
 # IP2Proxy HTTP Module for Apache
 
-The module detects visitor IP addresses which are used as VPN anonymizer, open proxies, web proxies and Tor exits.
+The module detects visitor IP addresses which are used as VPN anonymizer, open proxies, web proxies, Tor exit nodes, search engine robots, data center ranges, residential proxies, consumer privacy networks, and enterprise private networks.
 
 A IP2Proxy database is required for the lookup. It can be downloaded from https://lite.ip2location.com (Free) or https://www.ip2location.com (Commercial).
 
